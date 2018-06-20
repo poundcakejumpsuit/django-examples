@@ -10,5 +10,6 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('login/', views.LoginView.as_view(), name='login'),
     path('register/', views.register, name='register'),
-    
+    path('logout/', logout, {'next_page' : 'tadu_server:login'}, name='logout'),
+
 ]

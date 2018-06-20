@@ -1,9 +1,12 @@
-{# {% extends 'base.html' %} #}
+{% extends 'base.html' %}
 
 {% block content %}
-    {% if form.errors %}
+{% if not user.is_authenticated %}
+    {% block navbar %}{% endblock %}
+{% endif %}
 
-<p>form.errors</p>
+{% if form.errors %}
+    <p>form.errors</p>
 {% endif %}
 
 {% if next %}
