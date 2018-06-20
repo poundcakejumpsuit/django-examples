@@ -6,5 +6,5 @@ from django.views.decorators.cache import cache_control
 
 app_name = 'tadu_server'
 urlpatterns = [
-    path('', login, name='index'),
+    path('', views.index, name='index'),
 ]

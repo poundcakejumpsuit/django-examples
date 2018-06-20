@@ -7,4 +7,4 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
 def index(request):
-    return render(request, 'tadu_server/index.html')
+    return render(request, 'index.html')
