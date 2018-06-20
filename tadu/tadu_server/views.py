@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views import generic
+from .models import User
+# from .forms import LoginForm, UserForm
+from django.contrib.auth import login, authenticate, logout
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+def index(request):
+    return render(request, 'tadu_server/index.html')

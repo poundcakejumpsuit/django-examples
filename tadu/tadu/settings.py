@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'tadu_server.UserProfile'
+AUTH_USER_MODEL = 'tadu_server.User'
 
 
 # Internationalization
