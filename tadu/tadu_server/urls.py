@@ -8,4 +8,7 @@ app_name = 'tadu_server'
 urlpatterns = [
     path('', views.index, name='index'),
     path('home/', views.home, name='home'),
+    path('login/', views.LoginView.as_view(), name='login'),
+    path('register/', views.register, name='register'),
+    
 ]
