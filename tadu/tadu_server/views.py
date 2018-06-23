@@ -38,8 +38,8 @@ def register(request):
             print(raw_password)
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            # return redirect('tadu_server:home')
-            return super(LoginView, self).form_valid(form)
+            return redirect('tadu_server:home')
+            # return super(LoginView, self).form_valid(form)
     else:
         form = UserForm()
     return render(request, 'register.html', {'form': form})
