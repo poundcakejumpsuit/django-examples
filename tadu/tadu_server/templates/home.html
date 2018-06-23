@@ -5,8 +5,11 @@
 <div class="container">
     <div class="row">
         <div class="jumbotron">
-            <h1>Hello {{user.username}}</h1> 
+            <h2>Hello {{user.username}}</h2> 
             <p>You are on your Dashboard</p>
+        </div>
+        <div class="jumbotron">
+        	<a class="btn btn-primary pull-right pull-top" href="{% url 'tadu_server:home' %}" role="button">Add Task</a>
         </div>
     </div>
 </div>
