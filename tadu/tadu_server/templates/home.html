@@ -7,9 +7,18 @@
         <div class="jumbotron">
             <h2>Hello {{user.username}}</h2> 
             <p>You are on your Dashboard</p>
+            <a class="btn btn-primary pull-right pull-top" href="{% url 'tadu_server:add_task' user.username %}" role="button">Add Task</a>
         </div>
         <div class="jumbotron">
-        	<a class="btn btn-primary pull-right pull-top" href="{% url 'tadu_server:home' %}" role="button">Add Task</a>
+        	
+            {% for task in user_tasks %}
+                <div style="foreground: green; border-radius:50px;">
+                    <div class="panel panel-default img-rounded">
+                    
+                        <h2>{{ task.task_text }}</h2>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>

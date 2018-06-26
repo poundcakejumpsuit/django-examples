@@ -14,3 +14,8 @@ class Task(models.Model):
 
     def __str__(self):
         return self.task_text
+
+    @classmethod
+    def create(cls, task_owner, task_text, entry_date, due_date):
+        task = cls(task_owner, task_text, entry_date, due_date)
+        return task
