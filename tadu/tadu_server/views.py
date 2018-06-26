@@ -64,12 +64,11 @@ class TaskUpdateView(generic.UpdateView):
     form_class = TaskForm
     template_name = "add_task.html"
 
-    def dispatch(self, *args, **kwargs):
-        print(kwargs)
-        self.task_id = kwargs['pk']
-        return super(TaskUpdateView, self).dispatch(*args, **kwargs)
-
     def form_valid(self, form):
+        self.form = form
         form.save()
-        task = Task.objects.get(pk=self.task_id)
-        return redirect('tadu_server:home')
+        task_owner = form.cleaned_data['task_owner']
+        return redirect('tadu_server:home_tasks', username=task_owner)
+
+    def get_object(self, queryset=None):
+        return None
