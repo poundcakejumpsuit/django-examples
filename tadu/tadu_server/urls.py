@@ -13,4 +13,5 @@ urlpatterns = [
     path('logout/', logout, {'next_page' : 'tadu_server:login'}, name='logout'),
     path('home/<slug:username>', login_required(views.HomeView.as_view()), name='home_tasks'),
     path('home/<slug:username>/add_task', login_required(views.TaskUpdateView.as_view()), {'next_page' : 'tadu_server:home_tasks'}, name='add_task'),
+    path('home/<int:task_id>/delete_task', login_required(views.delete_task), name='delete_task'),
 ]

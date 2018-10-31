@@ -14,7 +14,8 @@
             {% for task in user_tasks %}
                 <div style="foreground: green; border-radius:50px;">
                     <div class="panel panel-default img-rounded">
-                    
+
+                        <a class="btn btn-primary pull-right pull-top" href="{% url 'tadu_server:delete_task' task.pk %}" role="button">Delete</a>
                         <h2>{{ task.task_text }}</h2>
                     </div>
                 </div>

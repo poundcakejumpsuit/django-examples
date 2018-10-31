@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import User, Task
 from .forms import LoginForm, UserForm, TaskForm
@@ -72,3 +72,11 @@ class TaskUpdateView(generic.UpdateView):
 
     def get_object(self, queryset=None):
         return None
+
+@login_required(login_url="tadu_server:login")
+def delete_task(request, task_id):
+    task = get_object_or_404(Task, pk=task_id).delete()
+    print(dir(request.user))
+    return redirect('tadu_server:home_tasks', username=request.user.username)
+
+
